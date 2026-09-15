@@ -1,0 +1,352 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f4f7;
+    color: #222;
+    direction: rtl;
+}
+
+/* ---------------- HEADER ---------------- */
+
+header {
+    background: #20232a;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 17px;
+}
+
+
+/* ---------------- CONTAINER ---------------- */
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: 30px auto;
+}
+
+
+/* ---------------- CONTROLS ---------------- */
+
+.top-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.top-controls input,
+.top-controls select {
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background: white;
+}
+
+.top-controls input {
+    flex: 1;
+}
+
+.top-controls select {
+    width: 150px;
+}
+
+
+/* ---------------- FLASHCARD ---------------- */
+
+.flashcard-container {
+    width: 100%;
+    height: 550px;
+    perspective: 1000px;
+}
+
+.flashcard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.7s;
+
+    transform-style: preserve-3d;
+}
+
+
+/* وقتی کارت برگردانده شود */
+
+.flashcard.flipped {
+    transform: rotateY(180deg);
+}
+
+
+/* ---------------- CARD SIDES ---------------- */
+
+.card {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    backface-visibility: hidden;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-y: auto;
+}
+
+
+/* ---------------- FRONT ---------------- */
+
+.front {
+    justify-content: center;
+}
+
+#germanWord {
+    font-size: 60px;
+    direction: ltr;
+
+    margin: 30px 0;
+
+    color: #222;
+}
+
+.hint {
+    color: #777;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+
+/* ---------------- LEVEL ---------------- */
+
+.level {
+    background: #eeeeee;
+
+    padding: 8px 18px;
+
+    border-radius: 20px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+
+/* ---------------- BUTTONS ---------------- */
+
+button {
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.03);
+}
+
+
+/* برگرداندن کارت */
+
+#flipBtn {
+    background: #222;
+    color: white;
+}
+
+
+/* تلفظ */
+
+#speakWordBtn,
+#speakExampleBtn {
+    background: #444;
+    color: white;
+
+    margin: 10px 0;
+}
+
+
+/* لغت بعدی */
+
+#nextBtn {
+    background: #222;
+    color: white;
+
+    margin-top: 20px;
+}
+
+
+/* ---------------- BACK ---------------- */
+
+.back {
+    transform: rotateY(180deg);
+
+    justify-content: flex-start;
+}
+
+#backWord {
+    direction: ltr;
+
+    font-size: 42px;
+
+    margin: 20px 0;
+}
+
+
+/* ---------------- MEANING ---------------- */
+
+.meaning-box {
+    width: 90%;
+
+    background: #f5f5f5;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    margin: 10px 0;
+}
+
+.meaning-box h3 {
+    margin-bottom: 10px;
+}
+
+#meaning {
+    font-size: 25px;
+
+    font-weight: bold;
+}
+
+
+/* ---------------- EXAMPLE ---------------- */
+
+.example-box {
+    width: 90%;
+
+    background: #f5f5f5;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    margin-top: 15px;
+}
+
+.example-box h3 {
+    margin: 12px 0;
+}
+
+#example {
+    direction: ltr;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+#exampleTranslation {
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* ---------------- INFORMATION ---------------- */
+
+.information {
+    background: white;
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+.information p {
+    margin: 8px;
+}
+
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    color: #777;
+}
+
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+    .top-controls {
+        flex-direction: column;
+    }
+
+    .top-controls select {
+        width: 100%;
+    }
+
+    .flashcard-container {
+        height: 600px;
+    }
+
+    #germanWord {
+        font-size: 45px;
+    }
+
+    #backWord {
+        font-size: 35px;
+    }
+
+    #example {
+        font-size: 17px;
+    }
+}

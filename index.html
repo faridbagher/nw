@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>آموزش لغات آلمانی</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🇩🇪 آموزش لغات آلمانی</h1>
+        <p>فلش‌کارت لغات آلمانی</p>
+    </header>
+
+
+    <main class="container">
+
+        <!-- انتخاب سطح -->
+        <div class="top-controls">
+
+            <select id="levelSelect">
+                <option value="all">همه سطوح</option>
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+            </select>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="جستجوی لغت..."
+            >
+
+        </div>
+
+
+        <!-- فلش کارت -->
+        <div class="flashcard-container">
+
+            <div class="flashcard" id="flashcard">
+
+                <!-- روی کارت -->
+                <div class="card front">
+
+                    <span class="level" id="frontLevel">
+                        A1
+                    </span>
+
+                    <h2 id="germanWord">
+                        Haus
+                    </h2>
+
+                    <p class="hint">
+                        برای دیدن اطلاعات بیشتر کارت را برگردان
+                    </p>
+
+                    <button id="flipBtn">
+                        🔄 برگرداندن کارت
+                    </button>
+
+                </div>
+
+
+                <!-- پشت کارت -->
+                <div class="card back">
+
+                    <span class="level" id="backLevel">
+                        A1
+                    </span>
+
+                    <h2 id="backWord">
+                        Haus
+                    </h2>
+
+
+                    <!-- تلفظ -->
+                    <button id="speakWordBtn">
+                        🔊 تلفظ کلمه
+                    </button>
+
+
+                    <!-- معنی -->
+                    <div class="meaning-box">
+
+                        <h3>🇮🇷 معنی</h3>
+
+                        <p id="meaning">
+                            خانه
+                        </p>
+
+                    </div>
+
+
+                    <!-- مثال -->
+                    <div class="example-box">
+
+                        <h3>📝 مثال</h3>
+
+                        <p id="example">
+                            Das Haus meiner Familie liegt in einer ruhigen
+                            Straße, nicht weit vom Stadtzentrum entfernt.
+                        </p>
+
+
+                        <button id="speakExampleBtn">
+                            🔊 تلفظ مثال
+                        </button>
+
+
+                        <h3>🇮🇷 ترجمه مثال</h3>
+
+                        <p id="exampleTranslation">
+                            خانه خانواده من در یک خیابان آرام قرار دارد،
+                            نه چندان دور از مرکز شهر.
+                        </p>
+
+                    </div>
+
+
+                    <button id="nextBtn">
+                        لغت بعدی ➜
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- اطلاعات -->
+        <section class="information">
+
+            <p>
+                تعداد لغات:
+                <strong id="wordCount">0</strong>
+            </p>
+
+            <p>
+                لغت فعلی:
+                <strong id="currentNumber">1</strong>
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>German Vocabulary 🇩🇪</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
